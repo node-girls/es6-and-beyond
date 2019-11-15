@@ -165,3 +165,76 @@ const contact = {
 contact.city = 'Valencia';
 contact.birthday = 'May 3';
 ```
+
+### Mini challenge
+
+¿Qué veremos en la consola al ejecutar el siguiente código?
+
+```js
+var a = 1;
+let b = 2;
+
+if (a === 1) {
+  var a = 5;
+  let b = 8;
+  console.log(a);
+  console.log(b);
+}
+
+console.log(a);
+console.log(b);
+```
+
+```js
+function foo() {
+  const a = 2;
+
+  function bar() {
+    console.log(a);
+  }
+
+  bar();
+}
+const a = 1;
+foo();
+```
+
+```js
+function bar(b) {
+  console.log(a);
+}
+function foo() {
+  const a = 5;
+  bar(10);
+}
+foo();
+```
+
+```js
+let a;
+function bar(b) {
+  console.log(a);
+}
+
+function foo() {
+  const a = 7;
+  bar(9);
+}
+
+foo();
+```
+
+```js
+let a;
+
+function foo() {
+  const a = 7;
+
+  function bar(b) {
+    console.log(a);
+  }
+
+  bar(9);
+}
+foo();
+```
