@@ -145,4 +145,23 @@ console.log(name); //Uncaught SyntaxError: Identifier 'name' has already been de
 ```js
 const booksUrl = 'http://listOfBooks';
 const apiKey = '9kifu877';
+
+booksURL = 'http://otherBooks'; //SyntaxError: redeclaration of const booksUrl
+```
+
+Ojo: `const` nos previene de poder reasignar valores pero podemos mutar objetos 😥
+
+```js
+const fruits = ['pera', 'mango'];
+
+fruits[2] = 'papaya';
+fruits; //Array(3) [ "pera", "mango", "papaya" ]
+
+const contact = {
+  name: 'Naye',
+  city: 'Madrid'
+};
+
+contact.city = 'Valencia';
+contact.birthday = 'May 3';
 ```
