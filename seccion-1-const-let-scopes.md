@@ -100,6 +100,10 @@ var myFunction = function() {
 myFunction();
 ```
 
+### Mini challenge
+
+Vamos a jugar un poco con este [JavaScript Visualizer](https://tylermcginnis.com/javascript-visualizer/) creado por Tyler Mcginnins. Sigue el link y en la sección de la derecha busca `Scope chain`, baja la velocidad a _slow_ clica en _step_ para ver cómo se va ejecutando el código.
+
 Dicho lo anterior. Vamos a ver las diferencias entre `var`, `let` y `const`.
 
 `var` nos permite mutar el valor de una variable en cualquier punto de la cadena del `scope`.
