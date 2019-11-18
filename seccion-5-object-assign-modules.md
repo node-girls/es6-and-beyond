@@ -171,3 +171,123 @@ var tres = true;
 var obj = Object.assign({}, uno, dos, tres);
 console.log(obj); //{ '0': 'u', '1': 'n', '2': 'o' }
 ```
+
+#### Módulos
+
+En JavaScript un módulo es una unidad de código independiente que es reusable.
+El objetivo de tener módulos es crear pequeñas piezas de código que se puedan importar cuando sean necesarias.
+Cosas importantes que recordar:
+
+- Todo el código dentro de un módulo, a partir de ES6, es privado y está en modo estricto aunque no escribas `"use strict"` por defecto.
+- Usamos `export` para exponer código fuera del módulo.
+- Usamos `import` para usar el código de otro módulo
+- Los módulo `<script type="module" src="main.js"></script>`.
+- Por defecto lo módulos son `deferred` y se ejecutan después de que se ha cargado el documento.
+
+Como hemos dicho, todo lo que está en un módulo es privado, usamos `export` para hacerlo público. Hay varias formas de hacerlo, la más simple es la siguiente:
+
+```js
+// greetings.js
+
+export function spanish() {
+  return 'Hola';
+}
+```
+
+Puedes exportar cualquier `funcintion`, `class`, `var`, `let`, `const`.
+
+Para usar el código que exportamos hay que importarlo en otro fichero, usamos `import`
+
+```js
+// main.js
+
+import { spanish } from './greetings.js';
+
+console.log(spanish());
+```
+
+Esta forma de importar y exportar se llama `named exports` porque usamos el nombre de la función o variable tanto en el `export` como en el `import`
+
+Si tenemos múltiples exports en un fichero lo mejor es usar un único export al final:
+
+```js
+// greetings.js
+
+function spanish() {
+  return 'Hola';
+}
+
+function english(a, b) {
+  return 'Hello';
+}
+
+function portuguese(a, b) {
+  return 'Olá';
+}
+
+export { spanish, english, portuguese };
+```
+
+Nuestro import sería:
+
+```js
+// main.js
+
+import { spanish, english, portuguese } from './greetings.js';
+```
+
+Podemos cambiar el nombre de nuestro import:
+
+```js
+// main.js
+
+import * as greeting from './greetings.js';
+//Importa toooodo con el nombre greeting del fichero greetings.js
+
+//mira cómo accedemos a los métodos, 'dot notation' :)
+console.log(greeting.spanish(1, 2));
+console.log(greeting.english(3, 4));
+```
+
+Podemos decidir dar por defecto un nombre a nuestros métodos al exportarlos
+
+```js
+// greetings.js
+
+...
+let greeting = { spanish, english, portuguese};
+export default greeting;
+
+//O podemos hacer directamente el export del objeto
+
+export default { spanish, english, portuguese};
+```
+
+El import sería así:
+
+```js
+// main.js
+
+import greeting from './greetings.js'; //Ojo!! el import no está envuelto en {} porque sólo podemos tener un `export default` por fichero.
+
+//accedemos a los métodos con 'dot notation'
+console.log(greeting.spanish(1, 2));
+console.log(greeting.english(3, 4));
+```
+
+Puedes importar múltiples módulos en un fichero
+
+### Mini challenge
+
+- Crea en tu repositorio del taller los ficheros index.html, main.js y calculator.js con la siguiente estructura
+
+```
+index.html
+main.js
+  modulo/
+    calculator.js
+```
+
+- Importa el main.js en el index.html.
+- En el fichero calculator crea los métodos sum, subtract, multiply y divide.
+- Prueba las diferentes formas de improt/export que hemos visto
