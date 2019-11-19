@@ -290,16 +290,65 @@ console.log(`Resultado ${habitantesTotales}`)
 // Resultado: 5096700
 ```
 
+1. Primera iteración: acumulador será 0 y habitantes será el valor de la propiedad habitantes en el objeto actual. El valor de habitantes será 1209000 porque es la primera iteración (la misma cosa que ciudades[0].habitantes). Pasamos acumulador a la siguiente iteración que será: 0 + 1209000
+2. Segunda iteración: acumulador será 1209000 y habitantes será 850300 (ciudades[1].habitantes). Pasamos acumulador: 1209000 + 850300
+3. ercera iteración: acumulador = 2059300; habitantes = 53700 (ciudades[2].habitantes). Pasamos acumulador: 2059300 + 53700
+4. Cuarta iteración: acumulador = 2113000; habitantes = 583600 (ciudades[3].habitantes). Pasamos acumulador:
+5. Quinta iteración: acumulador = 2696600; habitantes = 2400100 (ciudades[4].habitantes). Pasamos acumulador:
+6. Final, no hay más elementos por iterar. Resultado: 5096700
+
+
 #### `Array.prototype.find()` - ECMAScript 2015 (6th Edition, ECMA-262)
+
+```javascript
+arr.find(callback(element[, index[, array]])[, thisArg])
+```
+
+**Parameters**
+* `callback`: Función que se ejecuta sobre cada valor en el array, tomando tres argumentos:
+  - `element`: El elemento actual que se está procesando en el array.
+  - `index`: (opcional) El índice del elemento actual que se está procesando en el array.
+  - `array`: (opcional) El array desde el que se llama al método `find`.
+* `thisArg`: (opcional) Objeto a usar como `this`cuando se ejecuta `callback`.
+
+**Valor devuelto**  
+El **valor** del **primer elemento** del array que cumple la función de prueba proporcionada; de lo contrario, devuelve `undefined`.
+
+```javascript
+const inventario = [
+    {nombre: 'manzanas', cantidad: 2},
+    {nombre: 'bananas', cantidad: 0},
+    {nombre: 'cerezas', cantidad: 5}
+];
+
+function esCereza(fruta) { 
+    return fruta.nombre === 'cerezas';
+}
+
+console.log(inventario.find(esCereza));
+// { nombre: 'cerezas', cantidad: 5 }
+```  
 
 #### `Array.prototype.includes()` - ECMAScript 2016 (ECMA-262)
 
+```javascript
+arr.includes(searchElement[, fromIndex])
+```
 
+**Parameters**
+* `valueToFind`: El valor a buscar.
+* `fromIndex`: (opcional) Posición en la matriz en la cuál se debe comenzar a buscar `valueToFind`; el primer caracter a buscar se encuentra en `fromIndex`. Un valor negativo inicia la búsqueda desde array.length + fromIndex en adelante. El valor por defecto es 0.
 
+**Valor devuelto**  
+El **valor** del **primer elemento** del array que cumple la función de prueba proporcionada; de lo contrario, devuelve `undefined`.
 
+```javascript
+var arr = ['a', 'b', 'c'];
+
+arr.includes('c', 3);   // false
+arr.includes('c', 100); // false
+```
 
 #### Mini reto
 
-Intenta hacer un `console.log()` de otra cosa. Intenta hacer un `console.log()` de varias cosas a la vez. ¿Hay una diferencia entre comillas simples y comillas dobles? ¿Qué pasa cuando quitas las comillas? ¿Qué pasa cuando haces un `console.log()` de un número sin las comillas?
-{% endhint %}
 
