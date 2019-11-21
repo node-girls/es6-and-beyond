@@ -242,3 +242,5 @@ function foo() {
 }
 foo();
 ```
+
+### [Go to Step 2 >>>>](https://github.com/node-girls/es6-and-beyond/blob/master/seccion-2-arrow-function.md)

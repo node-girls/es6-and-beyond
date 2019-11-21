@@ -99,7 +99,7 @@ objTest.retardo();
 
 Ahora la función enviada como callback a setTimeout() está definida con una arrow function y por tanto no genera contexto nuevo en la variable this. Es por ello que al intentar invocar a this.hacerAlgo() no generará ningún error y se ejecutará perfectamente ese método hacerAlgo().
 
-
+### [Go to Step 3 >>>>](https://github.com/node-girls/es6-and-beyond/blob/master/seccion-3-template-literals.md)
 
 
 

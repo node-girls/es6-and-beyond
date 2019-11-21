@@ -291,3 +291,5 @@ main.js
 - Importa el main.js en el index.html.
 - En el fichero calculator crea los métodos sum, subtract, multiply y divide.
 - Prueba las diferentes formas de improt/export que hemos visto
+
+### [Go to Step 6 >>>>](https://github.com/node-girls/es6-and-beyond/blob/master/seccion-6-extended-parameter-handling.md)

@@ -29,3 +29,5 @@ También es posible hacer saltos de línea.
 console.log(`Hola ${user}! 
 Qué tal?`);
 ```
+
+### [Go to Step 4 >>>>](https://github.com/node-girls/es6-and-beyond/blob/master/seccion-4-metodos-arrays.md)

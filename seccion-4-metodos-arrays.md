@@ -351,4 +351,4 @@ arr.includes('c', 100); // false
 
 #### Mini reto
 
-
+### [Go to Step 5 >>>>](https://github.com/node-girls/es6-and-beyond/blob/master/seccion-5-object-assign-modules.md)
