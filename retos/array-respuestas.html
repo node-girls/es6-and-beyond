@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retos con arrays</title>
+</head>
+<body>
+  <p>Es necesario tener la consola abierta</p>
+  <script>
+
+    const scientists = [
+      { first: 'Marie', last: 'Curie', born: 1867, passed: 1934, nobel: true },
+      { first: 'Margarita', last: 'Salas', born: 1938, passed: 2019, nobel: false },
+      { first: 'Rosalind', last: 'Franklin', born: 1920, passed: 1958, nobel: false },
+      { first: 'Rita', last: 'Levi-Montalcini', born: 1909, passed: 2023, nobel: true },
+      { first: 'Hedi', last: 'Lamarr', born: 1914, passed: 2000, nobel: false },
+      { first: 'Ada', last: 'Lovelace', born: 1815, passed: 1852, nobel: false },
+      { first: 'Mary', last: 'Jackson', born: 1921, passed: 2005, nobel: false },
+      { first: 'Grace', last: 'Hopper', born: 1906, passed: 1992, nobel: false },
+      { first: 'Maria', last: 'Goeppert-Mayer', born: 1906, passed: 1972, nobel: true },
+      { first: 'Barbara', last: 'McClintock', born: 1902, passed: 1992, nobel: true }
+    ];
+
+    // Array.prototype.filter()
+    // 1. Filtra la lista de científicas por aquellas que tienen un premio Nobel
+    const hasNobel = scientists.filter((scientist) => scientist.nobel);
+    console.log(`Tienen nobel: ${hasNobel}`);
+    // Array.prototype.map()
+    // 2. Crea un array de científicas con su nombre y apellido únicamente.
+    const fullName = scientists.map((scientist) => `${scientist.first} ${scientist.last}`);
+    console.log(`Nombre completo: ${fullName}`);
+    // Array.prototype.sort()
+    // 3. Ordena las científicas por año de nacimiento. De más mayor a más joven.
+    const ordered = scientists.sort((a, b) => a.born > b.born ? 1 : -1);
+    console.table(ordered);
+    // Array.prototype.reduce()
+    // 4. Cuántos años vivieron entre todas.
+    const totalYears = scientists.reduce((total, scientst) => {
+      return total + (scientst.passed - scientst.born);
+    }, 0);
+    console.log(`Entre todas vivieron: ${totalYears} años`);
+    // 5. Ordena las científicas por las que vivieron más años.
+    const oldest = scientists.sort(function(a, b) {
+      const lastScientist = a.passed - a.born;
+      const nextScientist = b.passed - b.born;
+      return lastScientist > nextScientist ? -1 : 1;
+    });
+    console.table(oldest);
+  </script>
+</body>
+</html>
