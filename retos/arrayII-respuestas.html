@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Retos con arrays II</title>
+    </head>
+    <body>
+        <p>Es necesario tener la consola abierta</p>
+    <script>
+        const people = [
+            { name: 'Marie', year: 1988 },
+            { name: 'Margarita', year: 1986 },
+            { name: 'Rosalind', year: 1970 },
+            { name: 'Rita', year: 2015 }
+        ];
+        const comments = [
+            { text: 'I love summer!', id: 523423 },
+            { text: 'Star wars if the best movie ever', id: 823423 },
+            { text: 'Chocolate is my favorite food', id: 2039842 },
+            { text: 'Summer vibes', id: 123523 },
+            { text: 'Coldplay fan!', id: 542328 }
+        ];
+
+        // Array.prototype.some()
+        // 1. ¿Hay alguien mayor de 19 años?
+        const someoneMoreThan19 = people.every((person) => (new Date().getFullYear() - person.year) > 19);
+        console.log('¿Alguien es mayor de 19? ', someoneMoreThan19);
+        // Array.prototype.every()
+        // 2. ¿Son todos mayores de 19 años?
+        const allMoreThan19 = people.every((person) => (new Date().getFullYear() - person.year) > 19);
+        console.log('¿Todos son mayores de 19? ', allMoreThan19);
+        // Array.prototype.find()
+        // 3. Encuentra el comentario 'Coldplay fan!
+        const commentFound = comments.find((comment) => comment.text === 'Coldplay fan!');
+        console.log('El comentario con "Coldplay fan!" es: ', commentFound);
+        // Array.prototype.findIndex()
+        // 4. Encuentra el comentario con el ID 823423
+        const commentID = comments.findIndex((comment) => comment.id === 823423);
+        console.log('El comentario con el ID 823423 es: ', comments[commentID]);
+    </script>
+    </body>
+</html>
