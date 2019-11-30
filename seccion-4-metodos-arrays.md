@@ -63,13 +63,13 @@ Extrae una sección de una matriz unidimensional y devuelve una nueva matriz uni
 
 
 ```javascript
-console.log(`Estos son los animales:, ${animales.join(', ')}.`)
+console.log(`Estos son los animales: ${animales.join(', ')}.`)
 // Estos son los animales:, leon, ardilla, raton, gato, perro.
 
 animales.slice(0,2)
 // [ 'leon', 'ardilla' ]
 
-console.log(`Estos son los animales:, ${animales.slice(0,4).join(', ')} y ${animales[animales.length - 1]}.`)
+console.log(`Estos son los animales: ${animales.slice(0,4).join(', ')} y ${animales[animales.length - 1]}.`)
 // Estos son los animales:, leon, ardilla, raton, gato y perro.
 ```
 
@@ -130,9 +130,7 @@ let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
 
 
 function filterItems(query) {
-  return fruits.filter(function(el) {
-      return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
-  })
+  return fruits.filter((el) => el.toLowerCase().indexOf(query.toLowerCase()) > -1)
 }
 
 console.log(filterItems('ap')); // ['apple', 'grapes']
@@ -348,7 +346,5 @@ var arr = ['a', 'b', 'c'];
 arr.includes('c', 3);   // false
 arr.includes('c', 100); // false
 ```
-
-#### Mini reto
 
 ### [Go to Step 5 >>>>](https://github.com/node-girls/es6-and-beyond/blob/master/seccion-5-object-assign-modules.md)

@@ -2,19 +2,29 @@
 
 Las **`arrow functions`** de ES6 son una nueva manera de expresar las funciones de siempre, de un modo resumido.
 
-Aunque son comúnmente conocidas como arrow functions, también podrás oír hablar de ellas con su denominación en español, funciones flecha, o como "fat arrow functions", ya que para formar la flecha se usa una línea doble, del signo matemático igual "=".
+Aunque son comúnmente conocidas como arrow functions, también podrás oír hablar de ellas como _**funciones flecha**_ o  _**"fat arrow functions"**_, ya que para formar la flecha se usa una línea doble, del signo matemático igual "=".
 
 
 #### Cómo expresar una función con las arrow functions
 
 En vez de usar la palabra clave function se utiliza el símbolo de la flecha y los paréntesis donde se colocan los parámetros de la función también se mueven de lado, colocados antes de la flecha.
 
+
 ```javascript
-let mifuncion = () => {
-  //código de la función
+// Anterior a ES6:
+function miFuncionAntigua () {
+  // código de la función
+}
+miFuncionAntigua()
+
+// -----------------------------
+
+// ES6
+const miFuncionNueva = () => {
+  // código de la función
 }
 
-mifuncion()
+miFuncionNueva()
 ```
 
 #### Parámetros de las funciones flecha
@@ -27,16 +37,16 @@ let saludo = (nombre, tratamiento) => {
   alert('Hola ' + tratamiento + ' ' + nombre)
 }
 
-saludo('Miguel', 'sr.');
+saludo('Miguel', 'sr.')
 ```
 
 ```javascript
 let cuadrado = numero => {
-  return numero * numero;
+  return numero * numero
 }
 ```
 
-### Ausencia de las llaves de la función
+#### Ausencia de las llaves de la función
 
 Existe otro caso especial, en el que podemos también ahorrarnos algún carácter extra, en este caso las llaves de apertura y cierre de la función. Sería cuando solamente tenemos una línea de código en nuestra función.
 
@@ -90,7 +100,7 @@ let objTest = {
   },
 
   hacerAlgo: function() {
-    alert('hice algo');
+    console.log('hice algo');
   }
 }
 
